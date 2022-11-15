@@ -17,7 +17,7 @@ var button = [{ buttonId: '!text_grup', buttonText: { displayText: 'Bye👋'}, t
 await conn.sendMessage(
 update.id, 
 {
-text: `*Sayonara @${num.split("@")[0]}*\n*kalo mau balik lagi ke group ini, wajib bawa gorengan 1 truk😊*`,
+text: `*Sayonara @${num.split("@")[0]}*`,
 buttons: button,
 footer: metadata.subject, 
 mentions: [num] })
@@ -46,7 +46,7 @@ var button = [{ buttonId: '!text_grup', buttonText: { displayText: 'Welcome👋'
 await conn.sendMessage(
 update.id, 
 { 
-text: `*Hello @${num.split("@")[0]}*\n*Welcome to ${metadata.subject}* \n\n*Jangan Lupa Intro*\n*Nama:*\n*Umur:*\n*Hobi:*\n*Askot:*\n\n*Sering² Baca Deskripsi Ya Kak🙏*`,
+text: `*Hello @${num.split("@")[0]}*\n*Welcome to ${metadata.subject}* \n\n*Sering² Baca Deskripsi Ya Kak🙏*`,
 buttons: button, 
 footer: metadata.subject,
 mentions: [num] })
