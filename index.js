@@ -155,7 +155,7 @@ if (tt_res.status == 404) return reply('Gagal url tidak ditemukan')
 var lagu_tt = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=SadTeams&url=${chats}`)
 reply(`𝗧𝗜𝗞𝗧𝗢𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
 
-*Author:* Lexxy Official
+*Author:* 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭
 *Title:* ${tt_res.result.title}
 *Durasi:* ${tt_res.result.duration}
 *Username:* ${tt_res.result.author.username}
@@ -302,7 +302,7 @@ const mark_slebew = '0@s.whatsapp.net'
 const more = String.fromCharCode(8206)
 const strip_ny = more.repeat(4001)
 var footer_nya =`𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝑩𝒚 @${setting.ownerNumber.split("@")[0]}`
-let menu_nya = `───「 𝗚𝗨𝗥𝗔𝗕𝗢𝗧-𝗠𝗗 」────
+let menu_nya = `───「 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭 」────
 
  ${ucapanWaktu} ${cekUser("name", sender)} 👋🏻
 
@@ -321,14 +321,12 @@ let menu_nya = `───「 𝗚𝗨𝗥𝗔𝗕𝗢𝗧-𝗠𝗗 」───�
 ${strip_ny}
  𝗠𝗔𝗜𝗡 𝗠𝗘𝗡𝗨
  › ${prefix}owner
- › ${prefix}script
  › ${prefix}toimg
  › ${prefix}sticker
  › ${prefix}spamcall
  › ${prefix}jadibot
  › ${prefix}listjadibot
  › ${prefix}infoupdate
- › ${prefix}groupbot
  
  𝗔𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦 𝗖𝗛𝗔𝗧
  › ${prefix}chat
@@ -406,9 +404,8 @@ ${strip_ny}
  › ${prefix}bug5 *628xxx*
 `
 let buttonmenu = [
-{buttonId: '#iklan', buttonText: {displayText: '️⋮☰ 𝙄𝙆𝙇𝘼𝙉'}, type: 1},
-{buttonId: '#owner', buttonText: {displayText: '️⋮☰ 𝙊𝙒𝙉𝙀𝙍'}, type: 1},
-{buttonId: '#groupbot', buttonText: {displayText: '️⋮☰ 𝙂𝙍𝙊𝙐𝙋'}, type: 1}
+{buttonId: '#owner', buttonText: {displayText: '️OWNER'}, type: 1},
+{buttonId: '#sewa', buttonText: {displayText: '️SEWA BOT'}, type: 1}
 ]
 conn.sendMessage(from, 
 {text: menu_nya, 
@@ -454,21 +451,36 @@ var teksss_verify =`𝙍𝙀𝙂𝙄𝙎𝙏𝙀𝙍 𝙐𝙎𝙀𝙍
 conn.sendMessage(`${setting.ownerNumber}`, {text:teksss_verify, mentions: [sender]})
 }
 break
-case 'grupbot':
-case 'groupbot':
+case 'sewa':
+case 'sewa bot':
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-reply(`*Forum Bot Whatsapp*
-https://chat.whatsapp.com/E3zewfxrc5pKE6Rzb3BuqG`)
+reply(`*PRICE LIST SEWABOT*
+
+*Harga Sewa*
+⬣ 7 Hari = 4.000
+⬣ 30 Hari = 7.000
+⬣ Permanen = 11.000
+
+*Keuntungan :*
+⬣ Bot Masuk Sesuai Waktu Sewa
+⬣ Antilink
+⬣ On 24 Jam
+⬣ Fitur Banyak
+⬣ Welcome
+⬣ Dan Lainnya
+
+ *Contact person* *Owner* :
+https://wa.me/6285878105774@s.whatsapp.net`)
 break
 case 'infoupdate':
 reply('-')
 break
 case 'script': case 'sc':
 reply(`_SCRIPT BOT INI DIJUAL_
-_HARGA 80K JIKA MINAT?_
+_HARGA 50K JIKA MINAT?_
 
 *Whatsapp Admin*
-Wa.me/6283834558105`)
+Wa.me/6285878105774`)
 break
 case 'owner':{
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
