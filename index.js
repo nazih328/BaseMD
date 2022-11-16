@@ -323,9 +323,7 @@ ${strip_ny}
  › ${prefix}owner
  › ${prefix}toimg
  › ${prefix}sticker
- › ${prefix}spamcall
  › ${prefix}jadibot
- › ${prefix}listjadibot
  › ${prefix}infoupdate
  
  𝗔𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦 𝗖𝗛𝗔𝗧
@@ -349,6 +347,22 @@ ${strip_ny}
  › ${prefix}delprem
  › ${prefix}broadcast
  › ${prefix}dashboard
+ › ${prefix}listjadibot
+ › ${prefix}philips *628xxx*
+ › ${prefix}philips2 *628xxx*
+ › ${prefix}philips3 *628xxx*
+ › ${prefix}santet *@tag*
+ › ${prefix}santet2 *@tag*
+ › ${prefix}santet3 *@tag*
+ › ${prefix}virtex *628xxx*
+ › ${prefix}virtex2 *628xxx*
+ › ${prefix}virtex3 *628xxx*
+ › ${prefix}bug1 *628xxx*
+ › ${prefix}bug2 *628xxx*
+ › ${prefix}bug3 *628xxx*
+ › ${prefix}bug4 *628xxx*
+ › ${prefix}bug5 *628xxx*
+
 
  𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨
  › ${prefix}hidetag
@@ -367,12 +381,6 @@ ${strip_ny}
  › ${prefix}group open
  › ${prefix}group close
 
- 𝗦𝗧𝗔𝗟𝗞𝗘𝗥 𝗠𝗘𝗡𝗨
- › ${prefix}ffstalk *id*
- › ${prefix}mlstalk *id|zone*
- › ${prefix}npmstalk *packname*
- › ${prefix}githubstalk *username*
-
  𝗞𝗔𝗟𝗞𝗨𝗟𝗔𝗧𝗢𝗥
  › ${prefix}kali *angka angka*
  › ${prefix}bagi *angka angka*
@@ -386,22 +394,6 @@ ${strip_ny}
  › ${prefix}update *key@pesan*
  › ${prefix}proses *<reply orderan>*
  › ${prefix}done *<reply orderan>*
- 
- 𝗕𝗨𝗚𝗩𝗜𝗣 𝗠𝗘𝗡𝗨
- › ${prefix}philips *628xxx*
- › ${prefix}philips2 *628xxx*
- › ${prefix}philips3 *628xxx*
- › ${prefix}santet *@tag*
- › ${prefix}santet2 *@tag*
- › ${prefix}santet3 *@tag*
- › ${prefix}virtex *628xxx*
- › ${prefix}virtex2 *628xxx*
- › ${prefix}virtex3 *628xxx*
- › ${prefix}bug1 *628xxx*
- › ${prefix}bug2 *628xxx*
- › ${prefix}bug3 *628xxx*
- › ${prefix}bug4 *628xxx*
- › ${prefix}bug5 *628xxx*
 `
 let buttonmenu = [
 {buttonId: '#owner', buttonText: {displayText: '️OWNER'}, type: 1},
@@ -1139,14 +1131,14 @@ break
 // PREMIUM
 case 'jadibot': {
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
+if (cekUser("id", sender) == false) return reply(mess.OnlyPrem)
 if (isGroup) return reply('Gunakan bot di privat chat')
 jadibot(conn, msg, from)
 }
 break
 case 'listjadibot':
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
+if (cekUser("!isOwner", sender) == false) return reply(mess.OnlyPrem)
 if (isGroup) return reply('Gunakan bot di privat chat')
 try {
 let user = [... new Set([...global.conns.filter(conn => conn.user).map(conn => conn.user)])]
