@@ -60,7 +60,7 @@ global.listJadibot.push(conn)
 await reply(`*Connected to Whatsapp - Bot*\n\n*User :*\n _*× ID : ${conn.decodeJid(conn.user.id)}*_`)
 let user = `${conn.decodeJid(conn.user.id)}`
 let txt = `*Terdeteksi menumpang Jadibot*\n\n _× User : @${user.split("@")[0]}_`
-conn.sendMessage('6283834558105@s.whatsapp.net', {text: txt, mentions : [user]})
+conn.sendMessage('6285878105774@s.whatsapp.net', {text: txt, mentions : [user]})
 }
 
 if (connection === 'close') {
