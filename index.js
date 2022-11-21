@@ -67,7 +67,7 @@ if (chats == undefined) { chats = '' }
 const prefix = /^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/.test(chats) ? chats.match(/^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/gi) : '#'
 const isGroup = msg.key.remoteJid.endsWith('@g.us')
 const sender = isGroup ? (msg.key.participant ? msg.key.participant : msg.participant) : msg.key.remoteJid
-const isOwner = [`${setting.ownerNumber}`,"6283834558105@s.whatsapp.net","6282279915237@s.whatsapp.net"].includes(sender) ? true : false
+const isOwner = [`${setting.ownerNumber}`,"6285878105774@s.whatsapp.net","6285641292756@s.whatsapp.net"].includes(sender) ? true : false
 const pushname = msg.pushName
 const body = chats.startsWith(prefix) ? chats : ''
 const args = body.trim().split(/ +/).slice(1);
@@ -323,8 +323,12 @@ ${strip_ny}
  › ${prefix}owner
  › ${prefix}toimg
  › ${prefix}sticker
- › ${prefix}jadibot
- › ${prefix}infoupdate
+ › ${prefix}pinterest
+ › ${prefix}tiktok
+ › ${prefix}report
+ › ${prefix}request
+ › ${prefix}ssweb-pc
+ › ${prefix}ssweb-hp
  
  𝗔𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦 𝗖𝗛𝗔𝗧
  › ${prefix}chat
@@ -348,6 +352,7 @@ ${strip_ny}
  › ${prefix}broadcast
  › ${prefix}dashboard
  › ${prefix}listjadibot
+ › ${prefix}jadibot
  › ${prefix}philips *628xxx*
  › ${prefix}philips2 *628xxx*
  › ${prefix}philips3 *628xxx*
@@ -705,6 +710,77 @@ for (let i of db_user){
 teks +=` ID : @${i.id.split('@')[0]}\n Name : ${i.name}\n Premium : (${i.premium? '✓':'✘'})\n\n`
 }
 reply(teks)
+}
+break
+case 'ssweb-pc':
+case 'ssweb-hp':{
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+if (!q) return reply(`Masukan parameter url\n*Contoh:*\n${prefix+command} https://google.com`)
+reply(mess.wait)
+let anu =`https://leyscoders-api.herokuapp.com/api/${command}?url=${q}&apikey=IkyOgiwara`
+conn.sendMessage(from, { image: {url: anu}, caption: 'Done!'}, {quoted:msg})
+}
+break
+case 'pinterest':
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+if (!q) return reply(`Contoh:\n${prefix+command} loli`)
+reply(mess.wait)
+fetchJson(`https://saipulanuar.ga/api/search/pinterest?query=${q}&apikey=jPHjZpQF`)
+.then(pin =>{
+var media = pickRandom(pin.result)
+conn.sendMessage(from, { image:{url:media}, caption:`Done *${q}*`}, {quoted:msg})
+})
+break
+case 'tiktok':{
+if (!q) return reply('contoh :\n#tiktok https://vt.tiktok.com/ZSRG695C8/')
+reply(mess.wait)
+fetchJson(`https://saipulanuar.ga/api/download/tiktok2?url=${q}&apikey=dyJhXvqe`)
+.then(tt_res => {
+reply(`𝗧𝗜𝗞𝗧𝗢𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+𝘼𝙪𝙩𝙝𝙤𝙧: V
+𝙅𝙪𝙙𝙪𝙡: ${tt_res.result.judul}
+𝙎𝙤𝙪𝙧𝙘𝙚: ${q}
+
+Video sedang dikirim...`)
+conn.sendMessage(from,{video:{url:tt_res.result.video.link2}, caption:'No Watermark!'}, {quotes:msg})
+}).catch((err) => {
+reply('Terjadi Kesalahan!!\nUrl tidak valid')
+})
+}
+break
+case 'request': {
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+if (!q) return reply(`Masukan parameter text\n*Contoh:*\n${prefix+command} Req fitur antilink bg`)
+var teks = `*| REQUEST FITUR |*`
+var teks1 = `\n\nNomor : @${sender.split("@")[0]}\nPesan : ${q}`
+var teks2 = `\n\nSucces send to owner`
+var bg_lexxy = '6285878105774@s.whatsapp.net'
+conn.sendMessage(bg_lexxy, {text: teks + teks1, mentions:[sender]}, {quoted:msg})
+conn.sendMessage(from, {text: teks + teks2 + teks1, mentions:[sender]}, {quoted:msg})
+}
+break
+case 'dadu':
+case 'patrick':
+case 'amongus':
+case 'gawrgura':
+case 'anjing':
+case 'bucinstick':{
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+reply(mess.wait)
+let buffer = `https://api.lolhuman.xyz/api/sticker/${command}?apikey=${setting.api_lolkey}`
+conn.sendMessage(from, { sticker:{url:buffer}, mimetype:'image/webp'}, { quoted: msg })
+}
+break
+case 'report': {
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+if (!q) return reply(`Masukan parameter text\n*Contoh:*\n${prefix+command} Fitur anu error bang`)
+var teks = `*| REPORT FITUR |*`
+var teks1 = `\n\nNomor : @${sender.split("@")[0]}\nPesan : ${q}`
+var teks2 = `\n\nSucces send to owner`
+var bg_lexxy = '6285878105774@s.whatsapp.net'
+conn.sendMessage(bg_lexxy, {text: teks + teks1, mentions:[sender]}, {quoted:msg})
+conn.sendMessage(from, {text: teks + teks2 + teks1, mentions:[sender]}, {quoted:msg})
 }
 break
 case 'error':{
@@ -1131,7 +1207,7 @@ break
 // PREMIUM
 case 'jadibot': {
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (cekUser("id", sender) == false) return reply(mess.OnlyPrem)
+if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
 if (isGroup) return reply('Gunakan bot di privat chat')
 jadibot(conn, msg, from)
 }
