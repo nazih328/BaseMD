@@ -302,9 +302,7 @@ const mark_slebew = '0@s.whatsapp.net'
 const more = String.fromCharCode(8206)
 const strip_ny = more.repeat(4001)
 var footer_nya =`𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝑩𝒚 @${setting.ownerNumber.split("@")[0]}`
-let menu_nya = `───「 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭 」────
-
- ${ucapanWaktu} ${cekUser("name", sender)} 👋🏻
+let menu_nya = `${ucapanWaktu} ${cekUser("name", sender)} 👋🏻
 
  𝗨𝗦𝗘𝗥 𝗜𝗡𝗙𝗢
  • ID : @${sender.split('@')[0]}
@@ -399,6 +397,117 @@ ${strip_ny}
  › ${prefix}update *key@pesan*
  › ${prefix}proses *<reply orderan>*
  › ${prefix}done *<reply orderan>*
+ 
+ *ANIME* 𝗠𝗘𝗡𝗨
+ › ${prefix}cry
+ › ${prefix}hug
+ › ${prefix}pat
+ › ${prefix}bully
+ › ${prefix}lick
+ › ${prefix}kiss
+ › ${prefix}awoo
+ › ${prefix}waifu
+ › ${prefix}shinobu
+ › ${prefix}cuddle
+ › ${prefix}megumin
+ › ${prefix}slap
+ › ${prefix}neko
+ › ${prefix}wink
+ › ${prefix}dance
+ › ${prefix}poke
+ › ${prefix}glomp
+ › ${prefix}bite
+ › ${prefix}nom
+ › ${prefix}handhold
+ › ${prefix}highfive
+ › ${prefix}wave
+ › ${prefix}smug
+ › ${prefix}smile
+ › ${prefix}bonk
+
+*NSFW* 𝗠𝗘𝗡𝗨
+ › ${prefix}yuri
+ › ${prefix}ero
+ › ${prefix}foot
+ › ${prefix}ass
+ › ${prefix}cuckold
+ › ${prefix}cum
+ › ${prefix}hentai
+ › ${prefix}gangbang
+ › ${prefix}femdom
+ › ${prefix}ahegao
+ › ${prefix}glasses
+ › ${prefix}jahy
+ › ${prefix}orgy
+ › ${prefix}pussy
+ › ${prefix}thighs
+ › ${prefix}panties
+ › ${prefix}thighs
+ › ${prefix}masturbation
+ › ${prefix}chiisaihentai
+ › ${prefix}trap
+ › ${prefix}blowjob
+ › ${prefix}yaoi
+ › ${prefix}ecchi
+ › ${prefix}hentai
+ › ${prefix}ahegao
+ › ${prefix}hololewd
+ › ${prefix}sideoppai
+ › ${prefix}animefeets
+ › ${prefix}animebooty
+ › ${prefix}animethighss
+ › ${prefix}hentaiparadise
+ › ${prefix}animearmpits
+ › ${prefix}hentaifemdom
+ › ${prefix}lewdanimegirls
+ › ${prefix}biganimetiddies
+ › ${prefix}animebellybutton
+ › ${prefix}hentai4everyone
+
+*RANDOM* 𝗠𝗘𝗡𝗨 
+ › ${prefix}bj
+ › ${prefix}ero
+ › ${prefix}ppcp
+ › ${prefix}cum
+ › ${prefix}feet
+ › ${prefix}yuri
+ › ${prefix}trap
+ › ${prefix}lewd
+ › ${prefix}feed
+ › ${prefix}eron
+ › ${prefix}solo
+ › ${prefix}gasm
+ › ${prefix}poke
+ › ${prefix}anal
+ › ${prefix}holo
+ › ${prefix}tits
+ › ${prefix}kuni
+ › ${prefix}kiss
+ › ${prefix}erok
+ › ${prefix}smug
+ › ${prefix}baka
+ › ${prefix}solog
+ › ${prefix}feetg
+ › ${prefix}lewdk
+ › ${prefix}waifu
+ › ${prefix}pussy
+ › ${prefix}femdom
+ › ${prefix}cuddle
+ › ${prefix}hentai
+ › ${prefix}eroyuri
+ › ${prefix}cum_jpg
+ › ${prefix}blowjob
+ › ${prefix}erofeet
+ › ${prefix}holoero
+ › ${prefix}classic
+ › ${prefix}erokemo
+ › ${prefix}fox_girl
+ › ${prefix}futanari
+ › ${prefix}lewdkemo
+ › ${prefix}wallpaper
+ › ${prefix}pussy_jpg
+ › ${prefix}kemonomimi
+ › ${prefix}nsfw_avatar
 `
 let buttonmenu = [
 {buttonId: '#owner', buttonText: {displayText: '️OWNER'}, type: 1},
@@ -484,6 +593,27 @@ if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
 var owner_Nya = setting.ownerNumber
 sendContact(from, owner_Nya, setting.ownerName, msg)
 }
+break
+case 'chiisaihentai':case 'trap':case 'blowjob':case 'yaoi':case 'ecchi':case 'ahegao':case 'hololewd':case 'sideoppai':case 'animefeets':case 'animebooty':case 'animethighss':case 'hentaiparadise':case 'animearmpits':case 'hentaifemdom':case 'lewdanimegirls':case 'biganimetiddies':case 'animebellybutton':case 'hentai4everyone':{
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
+reply(mess.wait)
+conn.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=${setting.api_lolkey}`}, caption: `Nih ${command}📸` }, { quoted: msg })
+}
+break
+case 'bj':case 'ero':case 'cum':case 'feet':case 'yuri':case 'trap':case 'lewd':case 'feed':case 'eron':case 'solo':case 'gasm':case 'poke':case 'anal':case 'holo':case 'tits':case 'kuni':case 'kiss':case 'erok':case 'smug':case 'baka':case 'solog':case 'feetg':case 'lewdk':case 'waifu':case 'pussy':case 'femdom':case 'cuddle':case 'hentai':case 'eroyuri':case 'cum_jpg':case 'blowjob':case 'erofeet':case 'holoero':case 'classic':case 'erokemo':case 'fox_girl':case 'futanari':case 'lewdkemo':case 'wallpaper':case 'pussy_jpg':case 'kemonomimi':case 'nsfw_avatar':{
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
+reply(mess.wait)
+conn.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random2/${command}?apikey=${setting.api_lolkey}`}, caption: `Nih ${command}📸` }, { quoted: msg})
+}
+break
+case 'waifu':case 'lick':case 'kiss':case 'awoo':case 'hug':case 'cry':case 'cuddle':case 'bully':case 'megumin':case 'shinobu':case 'neko':case 'slap':case 'wink':case 'dance':case 'poke':case 'glomp':case 'bite':case 'nom':case 'handhold':case 'highfive':case 'wave':case 'smile':case 'yeet':case 'bonk':case 'smug':case 'pat':
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
+reply("[❗] SEDANG DIPROSES")
+fetchJson(`https://api.waifu.pics/sfw/${command}`).then(x => {
+conn.sendMessage(from, {image:{url:x.url}, caption:"Done!!", mentions:[sender]},{quoted:msg})})
 break
 case 'auto_room':{
 var id_satu = q.split('|')[0]
