@@ -9,6 +9,6 @@
     "GrupAdmin": "Perintah ini hanya bisa digunakan oleh Admin Grup",
     "BotAdmin": "Bot Harus menjadi admin",
     "OnlyOwner": "Perintah ini hanya dapat digunakan oleh owner bot",
-    "OnlyPrem": "Perintah ini khusus member premium\nMinat jadi premium? hubungi owner",
+    "OnlyPrem": "Perintah ini khusus member premium\nMau jadi premium gratis? hubungi owner",
     "OnlyUser": "Maaf kak, kamu belum terdaftar di database bot, ketik #verify\nUntuk memverifikasi."
 }
