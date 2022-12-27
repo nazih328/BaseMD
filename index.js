@@ -459,7 +459,7 @@ _Utamakan chat to the point_ 🚀
 
 *_Admin hanya melayani chat_*
 *_Seputar sewabot & transaksi_*
-http://Wa.me/6285878105774`)
+http://Wa.me/6285692242215⁩`)
 break
 case 'infoupdate':
 reply('-')
@@ -469,7 +469,7 @@ reply(`_SCRIPT BOT INI DIJUAL_
 _HARGA 50K JIKA MINAT?_
 
 *Whatsapp Admin*
-Wa.me/6285878105774`)
+6285692242215⁩`)
 break
 case 'owner':{
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
