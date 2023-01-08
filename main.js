@@ -50,14 +50,6 @@ else if (update.connection === 'close')
 connectToWhatsApp()
 })
 
-conn.ev.on('group-participants.update', async (update) =>{
-groupResponse_Demote(conn, update)
-groupResponse_Promote(conn, update)
-groupResponse_Welcome(conn, update)
-groupResponse_Remove(conn, update)
-console.log(update)
-})
-
 conn.sendImage = async (jid, path, caption = '', quoted = '', options) => {
 let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 return await conn.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
