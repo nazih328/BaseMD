@@ -10,5 +10,5 @@
     "BotAdmin": "Bot Harus menjadi admin",
     "OnlyOwner": "Perintah ini hanya dapat digunakan oleh owner bot",
     "OnlyPrem": "Perintah ini khusus member premium\nMau jadi premium gratis? hubungi owner",
-    "OnlyUser": "Maaf kak, kamu belum terdaftar di database bot, ketik #verify\nUntuk memverifikasi."
+    "OnlyUser": "Ya?"
 }
